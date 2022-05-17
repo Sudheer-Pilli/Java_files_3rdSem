@@ -4,5 +4,5 @@ package pack;
   */
  public interface placement_interface {
     
-     
+    public void getting_dept_info();
  }

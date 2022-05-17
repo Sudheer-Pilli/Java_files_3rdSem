@@ -1,10 +1,10 @@
 package pack;
 import java.util.Scanner;
 
-public class Student_list {
+public class Student_list extends Department_list{
     int Std_id;
     String Std_name, Std_lname;
-    String Dept_id;
+    String Dept_id ;
     int Age;
     float Marks;
     String Gender;
@@ -18,6 +18,7 @@ public class Student_list {
         Std_name = Sip.nextLine();
         System.out.print("Enter Dept: ");
         Dept_id = Sip.nextLine();
+        // Dept_id = (super.Dept_name);
         while(!Dept_id.equals("Comp") && !Dept_id.equals("law") && !Dept_id.equals("commers"))
         {
             System.out.println("please chose the correct dept Comp, law, Commers");

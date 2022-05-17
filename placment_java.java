@@ -19,36 +19,46 @@ public class placment_java {
         Placement_coordinator Plo_list = new Placement_coordinator();
         Job Jb_list = new Job();
         Interview_schedule Is_lSchedulesecond = new Interview_schedule();
-        Interview_progress Ip_list = new Interview_progress();
-
-
-        String cmd_line = (args[0]);
+        Interview_progress Ip_list = new Interview_progress();        
         System.out.println("X------------------------------------------X");
-        System.out.println("welcome to " + cmd_line +" University placments");
-        Std_list.show_std_data();
-        // Jb_list.eligible_or_not();
-        if (Jb_list.eligible_or_not() == true) {
-            // Applying for job
-        System.out.println("Do you want to apply for job? ");
-        Scanner apj = new Scanner(System.in);
-        String apply = apj.nextLine();
-        // Validating for the input
-        while (!apply.equals("Yes") && !apply.equals("No")) {
-            System.out.println("Please chose the correct input");
-            apply = apj.nextLine();
+        String cmd_line;
+        try {
+            cmd_line = (args[0]);
+            if (cmd_line.equals(0)) {
+                
+            }
+        } catch (Exception e) {
+            //TODO: handle exception
+            Scanner cmd_inp = new Scanner(System.in);
+            System.out.println(" please enter your college name: ");
+            cmd_line = cmd_inp.nextLine();
+            System.out.println("welcome to " + cmd_line +" University placments");
+        } finally{
+            // Dp_list.getting_dept_info();
+            Std_list.show_std_data();
+            // Jb_list.eligible_or_not();
+            if (Jb_list.eligible_or_not() == true) {
+                // Applying for job
+            System.out.println("Do you want to apply for job? ");
+            Scanner apj = new Scanner(System.in);
+            String apply = apj.nextLine();
+            // Validating for the input
 
-        }
-        if (apply.equals("No")) {
-            System.out.println("Thank you");
-
-        } else {
-            Is_lSchedulesecond.Interview_schedule();
-            
-            // Job.eligible_or_not( job_role_res ,Std_list.Std_id);
-            Is_lSchedulesecond.inverview_confirmation();
-        }
-        }
-        
+            while (!apply.equals("Yes") && !apply.equals("No")) {
+                System.out.println("Please chose the correct input");
+                apply = apj.nextLine();
+    
+            }
+            if (apply.equals("No")) {
+                System.out.println("Thank you");
+    
+            } else {
+                Is_lSchedulesecond.Interview_schedule();
+                
+                // Job.eligible_or_not( job_role_res ,Std_list.Std_id);
+                Is_lSchedulesecond.inverview_confirmation();
+            }
+            }
+        } 
     }
-
 }
