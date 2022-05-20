@@ -1,4 +1,5 @@
 package pack;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Student_list extends Department_list{
@@ -9,9 +10,16 @@ public class Student_list extends Department_list{
     float Marks;
     String Gender;
     public String show_std_data() {
-        
         Scanner Sip = new Scanner(System.in);
-        System.out.print("Enter Std_id: ");
+        int arr_counter;
+        ArrayList<Integer>s_id=new ArrayList<>();
+        ArrayList<Integer>s_name=new ArrayList<>();
+        ArrayList<Integer>s_dept=new ArrayList<>();
+        System.out.println("Enter the no of records to be inserted");
+        arr_counter = Sip.nextInt();
+        Sip.nextLine();
+        for (int i = 0; i < arr_counter; i++) {
+            System.out.print("Enter Std_id: ");
         Std_id = Sip.nextInt();
         Sip.nextLine();
         System.out.print("Enter name: ");
@@ -39,6 +47,10 @@ public class Student_list extends Department_list{
             Gender = Sip.nextLine();
         }
         System.out.println("X------------------------------------------X \n");
+        }
+        System.out.println("Student id: "+s_id);
+        System.out.println("Student Name: "+s_name);
+        System.out.println("Student Dept: "+ s_dept);
         return Std_id + Std_name + Dept_id;
     }
 
