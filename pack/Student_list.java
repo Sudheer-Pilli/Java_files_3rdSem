@@ -13,8 +13,9 @@ public class Student_list extends Department_list{
         Scanner Sip = new Scanner(System.in);
         int arr_counter;
         ArrayList<Integer>s_id=new ArrayList<>();
-        ArrayList<Integer>s_name=new ArrayList<>();
-        ArrayList<Integer>s_dept=new ArrayList<>();
+        ArrayList<String>s_name=new ArrayList<>();
+        ArrayList<String>s_dept=new ArrayList<>();
+        ArrayList<Integer>s_age=new ArrayList<>();
         System.out.println("Enter the no of records to be inserted");
         arr_counter = Sip.nextInt();
         Sip.nextLine();
@@ -22,10 +23,13 @@ public class Student_list extends Department_list{
             System.out.print("Enter Std_id: ");
         Std_id = Sip.nextInt();
         Sip.nextLine();
+        s_id.add(Std_id);
         System.out.print("Enter name: ");
         Std_name = Sip.nextLine();
+        s_name.add(Std_name);
         System.out.print("Enter Dept: ");
         Dept_id = Sip.nextLine();
+        s_dept.add(Dept_id);
         // Dept_id = (super.Dept_name);
         while(!Dept_id.equals("Comp") && !Dept_id.equals("law") && !Dept_id.equals("commers"))
         {
@@ -35,6 +39,7 @@ public class Student_list extends Department_list{
         System.out.print("Enter age: ");
         Age = Sip.nextInt();
         Sip.nextLine();
+        s_age.add(Age);
         while (Age < 18 || Age>100) {
             System.out.println("please type the correct age");
             Age = Sip.nextInt();
@@ -51,6 +56,9 @@ public class Student_list extends Department_list{
         System.out.println("Student id: "+s_id);
         System.out.println("Student Name: "+s_name);
         System.out.println("Student Dept: "+ s_dept);
+        System.out.println("Student age before adding: "+ s_age);
+        s_age.remove(s_age);
+        System.out.println("Student age after removing: "+ s_age);
         return Std_id + Std_name + Dept_id;
     }
 
